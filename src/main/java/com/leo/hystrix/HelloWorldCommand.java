@@ -15,6 +15,11 @@ public class HelloWorldCommand extends HystrixCommand {
 
     @Override
     protected String run() {
+        try {
+            Thread.sleep(1000*2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "Hello World";
     }
 
